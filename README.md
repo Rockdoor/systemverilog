@@ -14,6 +14,26 @@ This extension offers:
 * SV specific commands
 * auto indentation with aligning
 
+# Setup the extension
+After you clone the repositiory, you should run vscode tasks.
+
+```
+[Ctrl+T]
+npm: init-setup
+```
+
+npm install and post install will run.
+Now you can use the extension.
+
+Furthermore, if you want to develop or customize the extension, 
+
+```
+[Ctrl+T]
+gen_parser
+```
+
+Parser *.ts are generated from grammer files.
+
 
 # Parsing
 ## Diagnosis
