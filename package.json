@@ -16,6 +16,7 @@
   ],
   "main": "./out/extension",
   "scripts": {
+    "init-setup": "npm install && node ./node_modules/vscode/bin/install",
     "vscode:prepublish": "npm run compile",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
