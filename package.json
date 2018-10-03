@@ -1,0 +1,199 @@
+{
+  "name": "systemverilog",
+  "displayName": "SystemVerilog",
+  "description": "SystemVerilog HDL",
+  "version": "0.0.5",
+  "publisher": "Hirofumi IWATO",
+  "engines": {
+    "vscode": "^1.23.1"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:sv"
+  ],
+  "main": "./out/extension",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Configurations for SystemVerilog extension",
+      "properties": {
+        "svlog.server.enLogging": {
+          "scope": "window",
+          "type": "boolean",
+          "default": false,
+          "description": "Enable launguage server logging on cosole."
+        },
+        "svlog.server.trace": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VSCode and the language server."
+        },
+        "svlog.server.initialFileLists": {
+          "scope": "window",
+          "type": "array",
+          "default": [],
+          "description": "File lists to analyze when the extension starts."
+        },
+        "svlog.server.includePath": {
+          "scope": "window",
+          "type": "array",
+          "default": [],
+          "description": "Include path lists."
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "sv",
+        "aliases": [
+          "SystemVerilog",
+          "sv"
+        ],
+        "extensions": [
+          "v",
+          "vh",
+          "sv",
+          "svh"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sv",
+        "scopeName": "source.sv",
+        "path": "./syntaxes/sv.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "SystemVerilog",
+        "uiTheme": "vs-dark",
+        "path": "./themes/SystemVerilog-color-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "sv.instantiateModule",
+        "title": "Instantiate module",
+        "category": "sv"
+      },
+      {
+        "command": "sv.smartIndent",
+        "title": "Auto indent for SystemVerilog",
+        "category": "sv"
+      },
+      {
+        "command": "sv.alignComment",
+        "title": "Align comment",
+        "category": "sv"
+      },
+      {
+        "command": "sv.alignOpenParen",
+        "title": "Align parenthesis",
+        "category": "sv"
+      },
+      {
+        "command": "sv.alignRegExpWithInput",
+        "title": "Align regexp",
+        "category": "sv"
+      },
+      {
+        "command": "sv.deleteTrailingWhiteSpaces",
+        "title": "Delete trailing white spaces",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convPortDeclToConn",
+        "title": "Convert port decls. to connection descs. in explict form",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convPortDeclToConnImplicit",
+        "title": "Convert port decls. to connection descs. in implict form",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convPortDeclToSignal",
+        "title": "Convert port decls. to signal decl.",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convPortDeclToNextSignal",
+        "title": "Convert port decls. to next signal decl.",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convSignalDeclToReset",
+        "title": "Create non-blocking resets from signal decls",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convSignalDeclToBReset",
+        "title": "Create blocking resets from signal decls",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convResetToUpdate",
+        "title": "Convert reset desc. to update",
+        "category": "sv"
+      },
+      {
+        "command": "sv.convResetToNext",
+        "title": "Convert reset desc. to next",
+        "category": "sv"
+      },
+      {
+        "command": "sv.incSelectedNumbers",
+        "title": "Increment multi selected numbers",
+        "category": "sv"
+      },
+      {
+        "command": "sv.insSeqNumber",
+        "title": "Insert sequential numbers",
+        "category": "sv"
+      },
+      {
+        "command": "sv.swapPortDirection",
+        "title": "Swap port directions",
+        "category": "sv"
+      },
+      {
+        "command": "sv.labelComment",
+        "title": "Add label comment",
+        "category": "sv"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "sv",
+        "path": "snippets/snippets.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@types/node": "^10.3.3",
+    "antlr4ts": "^0.4.1-alpha.0",
+    "antlr4ts-cli": "^0.4.0-alpha.4",
+    "markdown-js": "0.0.4",
+    "typescript": "^2.9.2",
+    "vscode": "^1.1.18",
+    "vscode-languageclient": "^4.2.1",
+    "vscode-languageserver": "^4.2.1",
+    "vscode-uri": "^1.0.5"
+  }
+}
