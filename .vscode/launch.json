@@ -1,0 +1,40 @@
+// A launch configuration that launches the extension inside a new window
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": ["--extensionDevelopmentPath=${workspaceRoot}" ]
+        },
+        {
+          "name": "Attach to Language Server",
+          "type": "node",
+          "request": "attach",
+          "port": 6009
+        },
+        {
+            "name": "Parser test",
+            "type": "node",
+            "request": "launch",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "args": ["${workspaceFolder}/example/test_parser.sv"],
+            // "args": ["${workspaceFolder}/example/ax_ldc/msram.sv"],
+            "cwd": "${workspaceFolder}/out/sv_parser",
+            "program": "${workspaceFolder}/out/sv_parser/test_sv_parser.js"
+        },
+        {
+            "name": "ANTLR test",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "example/test_prep.sv",
+            "grammar": "src/sv_parser/grammar/SystemVerilogParser.g4",
+            "startRule": "source_text",
+            "printParseTree": true,
+            "visualParseTree": true
+        },
+    ]
+}

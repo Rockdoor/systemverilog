@@ -1,0 +1,236 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SystemVerilog",
+	"scopeName": "source.sv",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#operators" },
+		{	"include": "#keywords" },
+		{ "include": "#storages" },
+		{ "include": "#literals" },
+		{ "include": "#events" },
+		{	"include": "#entities" },
+		{ "include": "#preprocessors"},
+		{	"include": "#strings" }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.sv"
+						}
+					},
+					"name": "comment.block.sv"
+				},
+				{
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.sv"
+						}
+					},
+					"end": "$",
+					"name": "comment.line.double-slash.sv"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"match": "\\.\\*",
+					"name": "keyword.operator.sv"
+				},
+				{
+					"match": ":",
+					"name" :"keyword.operator.sv"
+				},
+				{
+					"match": "(=|==|\\!=|<=|>=|===|\\!==|>==|<==|<|>)",
+					"name" :"keyword.operator.sv"
+				},
+				{
+					"match": "(\\+|-|/|\\*|%)",
+					"name" :"keyword.operator.sv"
+				},
+				{
+					"match": "(\\||&|\\!|\\^)",
+					"name" :"keyword.operator.sv"
+				},
+				{
+					"match": "(\\(|\\)|{|}|\\[|\\])",
+					"name" :"keyword.operator.sv"
+				}
+
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "`(include|define|undef|ifdef|else|endif|timescale|default_nettype)",
+					"name": "keyword.preprocessor.sv"
+				},
+				{
+					"match": "\\b(package|endpackage)\\b",
+					"name": "keyword.decl.sv"
+				},
+				{
+					"match": "\\b(import|export)\\b",
+					"name": "keyword.control.sv"
+				},
+				{
+					"match": "\\b(parameter|localparam|input|output|inout|genvar)\\b",
+					"name": "keyword.type.sv"
+				},
+				{
+					"match": "\\b(defparam)\\b",
+					"name": "keyword.type.sv"
+				},
+				{
+					"match": "\\b(typedef|struct|packed|union|enum)\\b",
+					"name": "keyword.type.sv"
+				},
+				{
+					"match": "\\b(module|endmodule|interface|endinterface|class|endclass)\\b",
+					"name": "keyword.decl.sv"
+				},
+				{
+					"match": "\\b(function|endfunction|task|endtask|generate|endgenerate)\\b",
+					"name": "keyword.decl.sv"
+				},
+				{
+					"match": "\\b(assign|always|always_ff|always_comb|always_latch|initial)\\b",
+					"name": "keyword.decl.sv"
+				},
+				{
+					"match": "\\b(break|continue|return|fork|join|repeat|forever)\\b",
+					"name": "keyword.control.sv"
+				},
+				{
+					"match": "\\b(if|else|for|while|do|case|endcase|default)\\b",
+					"name": "keyword.control.sv"
+				},
+				{
+					"match": "\\b(begin|end)\\b",
+					"name": "keyword.block.sv"
+				}
+			]
+		},
+		"storages": {
+			"patterns": [
+				{
+					"match": "\\b(wire|reg|logic|bit|int|integer|real|shortreal|string)\\b",
+					"name": "storage.type.sv"
+				},
+				{
+					"match": "\\b(signed|unsigned)\\b",
+					"name": "storage.type.sv"
+				},
+				{
+					"match": "\\b(event)\\b",
+					"name": "storage.type.sv"
+				},
+				{
+					"match": "\\b\\w+_t\\b",
+					"name": "storage.type.sv"
+				},
+				{
+					"match": "\\b(automatic|static)\\b",
+					"name": "storage.type.sv"
+				}
+			]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"match": "\\d+(.\\d+)?\\s*(s|ms|us|ns|ps|fs)",
+					"name": "constant.numeric.sv"
+				},
+				{
+					"match": "('1|'0)",
+					"name": "constant.numeric.sv"
+				},
+				{
+					"match": "\\b(-)?\\d+'(s)?(d|h|b|o)(\\h|_|z|x)+\\b",
+					"name": "constant.numeric.sv"
+				},
+				{
+					"match": "\\b(-)?\\d+\\b",
+					"name": "constant.numeric.sv"
+				},
+				{
+					"match": "(-)?\\d*\\.\\d+",
+					"name": "constant.numeric.sv"
+				}
+			]
+		},
+		"events": {
+			"patterns" : [
+				{
+					"match": "\\b(posedge|negedge)\\b",
+					"name": "punctuation.event.sv"
+				},
+				{
+					"match": "#",
+					"name": "punctuation.event.sv"
+				},
+				{
+					"match": "@",
+					"name": "punctuation.event.sv"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"match": "\\.\\w+",
+					"name": "entity.membercall.sv"
+				},
+				{
+					"match": "(\\$\\w+)\\s*(\\()",
+					"captures": {
+						"1": {
+							"name": "entity.systemtask.sv"
+						},
+						"2": {
+							"name": "keyword.operator.sv"
+						}
+					}
+				},
+				{
+					"match": "(\\w+)\\s*(\\()",
+					"captures": {
+						"1": {
+							"name": "entity.function.sv"
+						},
+						"2": {
+							"name": "keyword.operator.sv"
+						}
+					}
+				}
+			]
+		},
+		"preprocessors": {
+			"patterns": [
+				{
+					"match": "`\\w+",
+					"name": "entity.preprocessor.sv"
+				}
+			]
+		},
+		"strings": {
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sv",
+					"match": "\\\\."
+				}
+			],
+			"name": "string.quoted.double.sv"
+		}
+	}
+}

@@ -1,0 +1,113 @@
+{
+	"name": "SystemVerilog",
+	"include": "./dark_plus.json",
+	"tokenColors": [
+		{
+			"scope": [
+				"punctuation.event.sv"
+			],
+			"settings": {
+				"foreground": "#F0E68C"
+			}
+		},
+		{
+			"scope": [
+				"keyword.operator.sv"
+			],
+			"settings": {
+				"foreground": "#c49494"
+			}
+		},
+		{
+			"scope": [
+				"keyword.preprocessor.sv"
+			],
+			"settings": {
+				"foreground": "#4682B4"
+			}
+		},
+		{
+			"scope": [
+				"keyword.decl.sv"
+			],
+			"settings": {
+				"foreground": "#DB7093"
+			}
+		},
+		{
+			"scope": [
+				"keyword.block.sv"
+			],
+			"settings": {
+				"foreground": "#9ACD32"
+			}
+		},
+		{
+			"scope": [
+				"keyword.control.sv"
+			],
+			"settings": {
+				"foreground": "#DDA0DD"
+			}
+		},
+		{
+			"scope": [
+				"keyword.type.sv"
+			],
+			"settings": {
+				"foreground": "#DDA0DD"
+			}
+		},
+		{
+			"scope": [
+				"storage.type.sv"
+			],
+			"settings": {
+				"foreground": "#87CEEB"
+			}
+		},
+		{
+			"scope": [
+				"entity.preprocessor.sv"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#4682B4"
+			}
+		},
+		{
+			"scope": [
+				"entity.membercall.sv"
+			],
+			"settings": {
+				"foreground": "#a6c573"
+			}
+		},
+		{
+			"scope": [
+				"entity.function.sv"
+			],
+			"settings": {
+				"foreground": "#F0E68C"
+			}
+		},
+		{
+			"scope": [
+				"entity.systemtask.sv"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#F0E68C"
+			}
+		},
+		{
+			"scope": [
+				"comment.block.sv",
+				"comment.line.double-slash.sv"
+			],
+			"settings": {
+				"foreground": "#B8860B"
+			}
+		}
+	]
+}

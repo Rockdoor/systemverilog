@@ -1,0 +1,12 @@
+{
+  "antlr4.generation": {
+      "mode": "internal",
+      "outputDir": "antlr_out",
+      "language": "JavaScript",
+      "listeners": true,
+      "visitors": false
+  },
+  "svlog.server.enLogging": true,
+  "svlog.server.includePath": [],
+  "svlog.server.initialFileLists": ["example/flist0.f", "example/flist1.f"],
+}

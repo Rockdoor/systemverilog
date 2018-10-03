@@ -1,0 +1,41 @@
+{
+  "New file" : {
+    "prefix" : "snip_newfile",
+    "body" : [
+      "//-----------------------------------------------------------------------------",
+      "// Title         : $1",
+      "//-----------------------------------------------------------------------------",
+      "// Description :",
+      "//",
+      "//-----------------------------------------------------------------------------",
+      "// Copyright (c) ${CURRENT_YEAR} by AXELL CORPORATION This model is the confidential and",
+      "// proprietary property of AXELL CORPORATION and the possession or use of this",
+      "// file requires a written license from AXELL CORPORATION.",
+      "//------------------------------------------------------------------------------",
+      "// Modification history :",
+      "// ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} : $2 : created",
+      "//-----------------------------------------------------------------------------",
+      "",
+      "`default_nettype none",
+      "",
+      "module $3 ();",
+      "endmodule",
+      "`default_nettype wire",
+      "//[EOF]",
+      ""
+    ],
+    "description": "Insert F/F description"
+  },
+  "Insert F/F" : {
+    "prefix" : "snip_ff",
+    "body" : [
+      "always_ff @(posedge ${clk}, negedge ${rst}) begin",
+      "  if (! ${rst}) begin",
+      "  end",
+      "  else begin",
+      "  end",
+      "end"
+    ],
+    "description": "Insert F/F description"
+  }
+}
