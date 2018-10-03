@@ -12,12 +12,13 @@ import Uri from "vscode-uri";
 ////////////////////////////////////////////////////////////////////////////////
 // Preparation
 ////////////////////////////////////////////////////////////////////////////////
-let serverlog  = console.log;
 let sva        = new sv_analyzer.sv_analyzer();
 let connection = lserv.createConnection(
   new lserv.IPCMessageReader(process), 
   new lserv.IPCMessageWriter(process));
 let documents  = new lserv.TextDocuments();
+
+let enLogging = false;
 
 documents.listen(connection);
 
@@ -34,6 +35,12 @@ let initial_param = {
 ////////////////////////////////////////////////////////////////////////////////
 // Utils.
 ////////////////////////////////////////////////////////////////////////////////
+function serverlog(message?: any) {
+  if (enLogging) {
+    connection.console.log(message);
+  }
+}
+
 function scanContent(uri: string, doc: string) {
   serverlog(`${uri}`);
   
@@ -92,8 +99,7 @@ connection.onDidChangeConfiguration((_didChangeConfigurationParams) => {
 
   let serverconf = _didChangeConfigurationParams.settings.svlog.server;
 
-  if (serverconf.enLogging) serverlog = console.log;
-  else                      serverlog = function () {/*NOP*/};
+  enLogging = serverconf.enLogging;
 
   sva.rootpath = initial_param.wsroot;
   sva.setIncPath(serverconf.includePath);
