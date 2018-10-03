@@ -2,10 +2,10 @@
   "name": "systemverilog",
   "displayName": "SystemVerilog",
   "description": "SystemVerilog HDL",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "publisher": "Hirofumi IWATO",
   "engines": {
-    "vscode": "^1.23.1"
+    "vscode": "^1.26"
   },
   "categories": [
     "Programming Languages",
@@ -191,9 +191,9 @@
     "antlr4ts-cli": "^0.4.0-alpha.4",
     "markdown-js": "0.0.4",
     "typescript": "^2.9.2",
-    "vscode": "^1.1.18",
-    "vscode-languageclient": "^4.2.1",
-    "vscode-languageserver": "^4.2.1",
-    "vscode-uri": "^1.0.5"
+    "vscode": "^1.1.21",
+    "vscode-languageclient": "^4.4.2",
+    "vscode-languageserver": "^4.4.2",
+    "vscode-uri": "^1.0.6"
   }
 }
