@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "publisher": "Hirofumi IWATO",
   "engines": {
-    "vscode": "^1.26"
+    "vscode": "^1.27.2"
   },
   "categories": [
     "Programming Languages",
