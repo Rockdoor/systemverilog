@@ -1,20 +1,21 @@
 {
   "name": "systemverilog",
-  "displayName": "SystemVerilog",
+  "displayName": "SystemVerilog subset for ASIC design",
   "description": "SystemVerilog HDL",
   "version": "0.1.0",
   "publisher": "Rockdoor",
-  "engines": {
-    "vscode": "^1.27.2"
-  },
+  "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
 		"type": "git",
 		"url": "https://github.com/Rockdoor/systemverilog"
 	},
 	"bugs": {
-		"url": "https://github.com/Rockdoor/systemverilogissues"
+		"url": "https://github.com/Rockdoor/systemverilog/issues"
 	},
   "icon": "etc/logo.png",
+  "engines": {
+    "vscode": "^1.27.2"
+  },
   "categories": [
     "Programming Languages",
     "Snippets"
@@ -27,6 +28,7 @@
     "init-setup": "npm install && node ./node_modules/vscode/bin/install",
     "vscode:prepublish": "npm run compile",
     "postinstall": "node ./node_modules/vscode/bin/install",
+		"publish": "vsce publish",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "contributes": {

@@ -4,7 +4,7 @@ This extension offers:
 * A SystemVerilog(SV) parser
   * collecting information of ports, variables, tasks, functions, modules, packages, and classes
   * generating syntactical diagnosis (not contextual)
-* IntelliSense connection by a language server, which responds to
+* IntelliSense with a language server, which responds to
   * hover
   * completion
   * signatureHelp
@@ -12,7 +12,7 @@ This extension offers:
   * definition
   * references
 * SV specific commands
-* auto indentation with aligning
+* Auto indentation with aligning
 
 # Setup the extension
 After you clone the repositiory, you should run vscode tasks.
