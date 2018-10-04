@@ -3,10 +3,18 @@
   "displayName": "SystemVerilog",
   "description": "SystemVerilog HDL",
   "version": "0.1.0",
-  "publisher": "Hirofumi IWATO",
+  "publisher": "Rockdoor",
   "engines": {
     "vscode": "^1.27.2"
   },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/Rockdoor/systemverilog"
+	},
+	"bugs": {
+		"url": "https://github.com/Rockdoor/systemverilogissues"
+	},
+  "icon": "etc/logo.png",
   "categories": [
     "Programming Languages",
     "Snippets"
