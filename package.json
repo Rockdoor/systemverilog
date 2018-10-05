@@ -2,7 +2,7 @@
   "name": "systemverilog",
   "displayName": "SystemVerilog subset for ASIC design",
   "description": "SystemVerilog HDL",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "Rockdoor",
   "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
