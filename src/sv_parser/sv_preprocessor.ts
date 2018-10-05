@@ -61,11 +61,23 @@ export class sv_preprocessor implements svl.SystemVerilogParserListener {
   macros:         {[key: string] : macro};
   repl_tbl:       replace[];
 
-  constructor(rew: pg.TokenStreamRewriter) {
+  constructor(rew: pg.TokenStreamRewriter, preDefines?: any[][]) {
     this.incpath  = [];
     this.rew      = rew;
     this.macros   = {};
     this.repl_tbl = [];
+
+    if (preDefines) {
+      preDefines.forEach(element => {
+        let mcr = new macro();
+        mcr.ident = element[0];
+        mcr.text = element[1];
+        mcr.text_line = 0;
+        mcr.text_char = 0;
+        this.macros[mcr.ident] = mcr;
+      });
+    }
+
     return this;
   }
 

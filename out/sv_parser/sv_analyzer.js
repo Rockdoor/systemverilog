@@ -34,7 +34,7 @@ class sv_analyzer {
     //////////////////////////////////////////////////////////////////////////////
     // Parsing
     //////////////////////////////////////////////////////////////////////////////
-    parseText(uri, text) {
+    parseText(uri, text, preDefines) {
         // invoke preprocessor parsing
         let pp_chars = new pg.ANTLRInputStream(text);
         let pp_lexer = new svlex.SystemVerilogLexer(pp_chars);
@@ -44,7 +44,7 @@ class sv_analyzer {
         pp_parser.removeErrorListeners();
         pp_parser.buildParseTree = true;
         let pp_tree = pp_parser.pp_text();
-        let pp_pp = new sv_pp.sv_preprocessor(rew);
+        let pp_pp = new sv_pp.sv_preprocessor(rew, preDefines);
         let curpath = path.dirname(vscode_uri_1.default.parse(uri).fsPath);
         pp_pp.incpath = this.incpath.concat([curpath]);
         pp_pp.tokens = pp_tokens;

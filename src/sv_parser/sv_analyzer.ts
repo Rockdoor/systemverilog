@@ -59,7 +59,7 @@ export class sv_analyzer {
   //////////////////////////////////////////////////////////////////////////////
   // Parsing
   //////////////////////////////////////////////////////////////////////////////
-  parseText(uri: string, text: string) {
+  parseText(uri: string, text: string, preDefines: any[][]) {
     // invoke preprocessor parsing
     let pp_chars  = new pg.ANTLRInputStream(text);
     let pp_lexer  = new svlex.SystemVerilogLexer(pp_chars);
@@ -71,7 +71,7 @@ export class sv_analyzer {
     pp_parser.buildParseTree = true;
 
     let pp_tree   = pp_parser.pp_text();
-    let pp_pp     = new sv_pp.sv_preprocessor(rew);
+    let pp_pp     = new sv_pp.sv_preprocessor(rew, preDefines);
     let curpath   = path.dirname(Uri.parse(uri).fsPath);
     pp_pp.incpath = this.incpath.concat([curpath]);
     pp_pp.tokens  = pp_tokens;

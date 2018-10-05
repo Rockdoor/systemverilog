@@ -2,7 +2,7 @@
   "name": "systemverilog",
   "displayName": "SystemVerilog subset for ASIC design",
   "description": "SystemVerilog HDL",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "Rockdoor",
   "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
@@ -34,7 +34,7 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Configurations for SystemVerilog extension",
+      "title": "SystemVerilog",
       "properties": {
         "svlog.server.enLogging": {
           "scope": "window",
@@ -60,6 +60,12 @@
           "description": "File lists to analyze when the extension starts."
         },
         "svlog.server.includePath": {
+          "scope": "window",
+          "type": "array",
+          "default": [],
+          "description": "Include path lists."
+        },
+        "svlog.server.preDefined": {
           "scope": "window",
           "type": "array",
           "default": [],

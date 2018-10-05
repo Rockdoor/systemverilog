@@ -35,11 +35,21 @@ exports.macro = macro;
 ///////////////////////////////////////////////////////////////////////////////
 // exports.preprocessor = class preprocessor extends svlis.SystemVerilogListener {
 class sv_preprocessor {
-    constructor(rew) {
+    constructor(rew, preDefines) {
         this.incpath = [];
         this.rew = rew;
         this.macros = {};
         this.repl_tbl = [];
+        if (preDefines) {
+            preDefines.forEach(element => {
+                let mcr = new macro();
+                mcr.ident = element[0];
+                mcr.text = element[1];
+                mcr.text_line = 0;
+                mcr.text_char = 0;
+                this.macros[mcr.ident] = mcr;
+            });
+        }
         return this;
     }
     // ==========================================================================

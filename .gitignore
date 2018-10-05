@@ -1,2 +1,3 @@
 node_modules
 src/sv_parser/antlr_out
+src/sv_parser/grammar/.antlr

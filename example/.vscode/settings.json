@@ -1,3 +1,7 @@
 {
   "svlog.server.enLogging": true,
+  "svlog.server.preDefined": [
+    ["ASIC", null], 
+    ["DEADBEEF", 10]
+  ],
 }

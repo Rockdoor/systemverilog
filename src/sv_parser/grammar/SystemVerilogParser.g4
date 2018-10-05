@@ -990,7 +990,7 @@ event_control:
 
 event_expression:
   edge_ident? expression (IFF expression)?
-| event_expression OR event_expression
+| event_expression ARR_OR event_expression
 | event_expression COM event_expression
 | OP_PRN event_expression CL_PRN
 ;
@@ -1336,7 +1336,7 @@ constant_primary:
 | constant_concatenation (OP_BRK constant_range_expression CL_BRK)?
 | constant_function_call
 | OP_PRN constant_mintypmax_expression CL_PRN
-// | constant_cast
+| constant_cast
 ;
 
 // *NOTE: acutually "| (class_qualifier | package_scope)? hier_ident select"
@@ -1385,7 +1385,8 @@ constant_select:
   ((DOT ident constant_bit_select)* DOT ident)? constant_bit_select
 ;
 
-constant_cast: casting_type OP_CAST constant_expression CL_PRN;
+// constant_cast: casting_type OP_CAST constant_expression CL_PRN;
+constant_cast: OP_PRN casting_type CL_PRN OP_CAST constant_expression CL_PRN;
 
 cast: casting_type OP_CAST expression CL_PRN;
 

@@ -12,6 +12,7 @@ let sva = new sv_analyzer.sv_analyzer();
 let connection = lserv.createConnection(new lserv.IPCMessageReader(process), new lserv.IPCMessageWriter(process));
 let documents = new lserv.TextDocuments();
 let enLogging = false;
+let preDefined = [];
 documents.listen(connection);
 ////////////////////////////////////////////////////////////////////////////////
 // Global variables
@@ -33,7 +34,7 @@ function serverlog(message) {
 function scanContent(uri, doc) {
     serverlog(`${uri}`);
     let last = new Date().getTime();
-    sva.parseText(uri, doc);
+    sva.parseText(uri, doc, preDefined);
     let cur = new Date().getTime();
     serverlog(`parsed in ${cur - last} msec`);
     connection.sendDiagnostics({
@@ -80,6 +81,9 @@ connection.onDidChangeConfiguration((_didChangeConfigurationParams) => {
     serverlog('onDidChangeConfiguration.');
     let serverconf = _didChangeConfigurationParams.settings.svlog.server;
     enLogging = serverconf.enLogging;
+    preDefined = serverconf.preDefined;
+    serverlog('Pre defines:');
+    serverlog(preDefined);
     sva.rootpath = initial_param.wsroot;
     sva.setIncPath(serverconf.includePath);
     let filelists = serverconf.initialFileLists;
