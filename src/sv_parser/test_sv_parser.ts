@@ -22,7 +22,7 @@ let analyzer = new sv_analyzer.sv_analyzer();
 let line = 104;
 let char = 8;
 
-analyzer.parseText(file, input);
+analyzer.parseText(file, input, []);
 let scid = analyzer.getScopedIdent(input, line-1, char-1);
 let ident = scid.ident;
 
