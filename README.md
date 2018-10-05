@@ -175,6 +175,8 @@ because this functionality is not based on parser.
 | svlog.enLogging        | language server logging to your console.                                  |
 | svlog.initialFileLists | paths of the files that contains verilog file paths to initially analyzed |
 | svlog.includePath      | include search paths (relative to the root of your workspace)             |
+| svlog.preDefined       | defines                                                                   |
+
 
 # Setup for developping (from git repository)
 ## ANTLR4
