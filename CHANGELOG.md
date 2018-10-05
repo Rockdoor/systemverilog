@@ -1,3 +1,3 @@
 # Change logs
 ## 2018-10-05
-Released v.0.1.0
+Released v.0.1.1
