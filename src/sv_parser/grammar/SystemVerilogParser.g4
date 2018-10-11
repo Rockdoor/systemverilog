@@ -856,7 +856,7 @@ case_generate_item:
 
 generate_block:
   generate_item
-| (ident COLON)? BEGIN (COLON ident) generate_item* END (COLON ident)?
+| (ident COLON)? BEGIN (COLON ident)? generate_item* END (COLON ident)?
 ;
 
 generate_item:

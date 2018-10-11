@@ -78,5 +78,4 @@ module sample_small_module (
     ind1             = 0;
     ind2            <= 8 % testfunc(A, B);
   end
-  
 endmodule
