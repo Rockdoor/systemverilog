@@ -188,8 +188,8 @@ export class sv_analyzer {
   // Analyze paser tree, creating database and hints for completion
   //////////////////////////////////////////////////////////////////////////////
   createDB(uri: string, line: number, column: number, search_ident: string = null) {
-    if (! (this.filedb[uri] && this.filedb[uri].tree))
-      return;
+    if (! (this.filedb[uri] && this.filedb[uri].tree) || (this.filedb[uri].err.diags.length != 0))
+      return false;
 
     let pos = this.convPositionSrcToDst(this.filedb[uri].repl_tbl, line, column);
 
@@ -216,6 +216,8 @@ export class sv_analyzer {
     }
 
     this.csr = {uri, hint, belong, scopes, hiers, ident};
+
+    return true;
   }
 
   //////////////////////////////////////////////////////////////////////////////
