@@ -70,7 +70,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "`(include|define|undef|ifdef|else|endif|timescale|default_nettype)",
+					"match": "`(include|define|undef|ifdef|ifndef|else|endif|timescale|default_nettype)",
 					"name": "keyword.preprocessor.sv"
 				},
 				{
@@ -102,7 +102,7 @@
 					"name": "keyword.decl.sv"
 				},
 				{
-					"match": "\\b(assign|always|always_ff|always_comb|always_latch|initial)\\b",
+					"match": "\\b(assign|deassign|force|release|always|always_ff|always_comb|always_latch|initial)\\b",
 					"name": "keyword.decl.sv"
 				},
 				{
@@ -110,7 +110,7 @@
 					"name": "keyword.control.sv"
 				},
 				{
-					"match": "\\b(if|else|for|while|do|case|endcase|default)\\b",
+					"match": "\\b(if|else|for|while|do|case|casex|casez|endcase|default)\\b",
 					"name": "keyword.control.sv"
 				},
 				{
@@ -122,7 +122,7 @@
 		"storages": {
 			"patterns": [
 				{
-					"match": "\\b(wire|reg|logic|bit|int|integer|real|shortreal|string)\\b",
+					"match": "\\b(wire|reg|logic|bit|int|integer|longint|real|shortreal|string)\\b",
 					"name": "storage.type.sv"
 				},
 				{

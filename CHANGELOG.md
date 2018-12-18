@@ -1,4 +1,8 @@
 # Change logs
+## v.0.1.6 (2018-12-12)
+### fixed issues
+* https://github.com/Rockdoor/systemverilog/issues/9
+
 ## v.0.1.5 (2018-11-28)
 ### fixed issues
 * https://github.com/Rockdoor/systemverilog/issues/8

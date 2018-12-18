@@ -263,7 +263,15 @@ export class sv_preprocessor implements svl.SystemVerilogParserListener {
     if (! ppelse) ppelse_arr = [];
     else          ppelse_arr = [ppelse];
 
-    let anchors  = [ppifdef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+    let anchors = undefined;
+
+    if (ppifdef) {
+      anchors  = [ppifdef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+    }
+    else {
+      anchors  = [ppifndef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+    }
+    
     let sat      = false;
 
     let delete_tokens_in_default = function(start: number, end: number) {

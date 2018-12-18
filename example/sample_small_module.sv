@@ -26,6 +26,10 @@ module sample_small_module (
   output logic [31:0] QX
 );
 
+`ifndef FAIL
+`else
+`endif
+
   int simtime;
 
   function testfunc (logic [7:0] x, logic [8:0] t);
@@ -37,6 +41,7 @@ module sample_small_module (
   initial begin : blk_initial
     wait(A == 1'b1);
     simtime = $stime();
+    force A = 1;
   end
 
   always_ff @(posedge CLK, negedge RST_X) begin : blk_main

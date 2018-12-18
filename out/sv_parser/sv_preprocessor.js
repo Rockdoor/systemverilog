@@ -202,7 +202,13 @@ class sv_preprocessor {
             ppelse_arr = [];
         else
             ppelse_arr = [ppelse];
-        let anchors = [ppifdef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+        let anchors = undefined;
+        if (ppifdef) {
+            anchors = [ppifdef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+        }
+        else {
+            anchors = [ppifndef].concat(ppelifs).concat(ppelse_arr).concat(ppendif);
+        }
         let sat = false;
         let delete_tokens_in_default = function (start, end) {
             for (let j = start; j < end; ++j) {
